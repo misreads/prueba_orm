@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista de Usuarios</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID Usuario</th>
+                <th>ID Perfil</th>
+                <th>Nombre_usuario</th>
+                <th>Fecha_creacion</th>
+                <th>Fecha_modificacion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td><a href="{{ path('usuario_show', { 'id': usuario.id }) }}">{{ usuario.id }}</a></td>
+                <td><a href="{{ path('perfil_show', { 'id': usuario.perfil.id }) }}">{{ usuario.perfil.id }}</a></td>
+                <td>{{ usuario.nombreusuario }}</td>
+                <td>{% if usuario.fechacreacion %}{{ usuario.fechacreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if usuario.fechamodificacion %}{{ usuario.fechamodificacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('usuario_show', { 'id': usuario.id }) }}">Mostrar</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('usuario_new') }}">Crear nuevo usuario</a>
+        </li>
+    </ul>
+{% endblock %}

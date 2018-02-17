@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table table-striped">
+        <td>
+            <ul>
+                <li><a href="{{ path('perfil_index') }}">Perfiles</a></li>
+                <li><a href="{{ path('usuario_index') }}">Usuarios</a></li>
+            </ul>
+        </td>
+
+    </table>
+{% endblock %}

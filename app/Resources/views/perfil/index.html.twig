@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista de perfiles</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre_perfil</th>
+                <th>Fecha_creacion</th>
+                <th>Fecha_modificacion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for perfil in perfils %}
+            <tr>
+                <td><a href="{{ path('perfil_show', { 'id': perfil.id }) }}">{{ perfil.id }}</a></td>
+                <td>{{ perfil.nombreperfil }}</td>
+                <td>{% if perfil.fechacreacion %}{{ perfil.fechacreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if perfil.fechamodificacion %}{{ perfil.fechamodificacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('perfil_show', { 'id': perfil.id }) }}">Mostrar</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('perfil_edit', { 'id': perfil.id }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('perfil_new') }}">Crear nuevo perfil</a>
+        </li>
+    </ul>
+{% endblock %}
