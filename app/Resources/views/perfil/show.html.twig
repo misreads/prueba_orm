@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Perfil</h1>
 
-    <table>
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -26,14 +26,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('perfil_index') }}">Volver a la lista</a>
+            <a href="{{ path('perfil_index') }}" class="btn btn-info" role="button">Volver a la lista</a>
         </li>
         <li>
-            <a href="{{ path('perfil_edit', { 'id': perfil.id }) }}">Editar</a>
+            <a href="{{ path('perfil_edit', { 'id': perfil.id }) }}" class="btn btn-dark" role="button">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Borrar">
+            <input type="submit" value="Borrar" class="btn btn-danger" role="button">
             {{ form_end(delete_form) }}
         </li>
     </ul>

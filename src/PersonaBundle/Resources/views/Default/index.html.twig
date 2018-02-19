@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <table class="table table-striped">
+    <table class="table table-dark">
         <td>
-            <ul>
-                <li><a href="{{ path('perfil_index') }}">Perfiles</a></li>
-                <li><a href="{{ path('usuario_index') }}">Usuarios</a></li>
+            <ul style="list-style: none inside">
+                <li style="display: block"><a href="{{ path('perfil_index') }}">Perfiles</a></li>
+                <li style="display: block"><a href="{{ path('usuario_index') }}">Usuarios</a></li>
             </ul>
         </td>
 

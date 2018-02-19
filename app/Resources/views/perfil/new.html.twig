@@ -4,13 +4,15 @@
     <h1>Creacion de perfil</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('perfil_index') }}">Volver a la lista</a>
+            {{ form_widget(form) }}
+            <input type="submit" value="Crear" class="btn btn-success" role="button">
+            {{ form_end(form) }}
+        </li>
+        <li>
+            <a href="{{ path('perfil_index') }}" class="btn btn-dark" role="button">Volver a la lista</a>
         </li>
     </ul>
 {% endblock %}

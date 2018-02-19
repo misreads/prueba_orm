@@ -4,17 +4,19 @@
     <h1>Edicion de Usuario</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Editar" />
-    {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('usuario_index') }}">Volver a la lista</a>
+            {{ form_widget(edit_form) }}
+            <input type="submit" value="Editar" class="btn btn-success" role="button">
+            {{ form_end(edit_form) }}
+        </li>
+        <li>
+            <a href="{{ path('usuario_index') }}" class="btn btn-info" role="button">Volver a la lista</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Borrar">
+                <input type="submit" value="Borrar" class="btn btn-danger" role="button">
             {{ form_end(delete_form) }}
         </li>
     </ul>

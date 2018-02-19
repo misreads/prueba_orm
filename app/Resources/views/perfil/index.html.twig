@@ -23,10 +23,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('perfil_show', { 'id': perfil.id }) }}">Mostrar</a>
+                            <a href="{{ path('perfil_show', { 'id': perfil.id }) }}" class="btn btn-success" role="button" >Mostrar</a>
                         </li>
                         <li>
-                            <a href="{{ path('perfil_edit', { 'id': perfil.id }) }}">Editar</a>
+                            <a href="{{ path('perfil_edit', { 'id': perfil.id }) }}" class="btn btn-danger" role="button" >Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +37,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('perfil_new') }}">Crear nuevo perfil</a>
+            <a href="{{ path('persona_default_index') }} " class="btn btn-dark" role="button">Volver</a>
+            <a href="{{ path('perfil_new') }} " class="btn btn-info" role="button">Crear nuevo perfil</a>
         </li>
     </ul>
 {% endblock %}
